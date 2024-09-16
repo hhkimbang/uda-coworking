@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: <DOCKER_IMAGE_URI_FROM_ECR>
+        image: 516640154779.dkr.ecr.us-east-1.amazonaws.com/coworking-space:7
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -51,6 +51,6 @@ spec:
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: db-secret
+              name: dbp-secret
               key: db-password
       restartPolicy: Always
