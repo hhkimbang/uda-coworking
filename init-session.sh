@@ -7,8 +7,8 @@
 #connect cluster
 aws eks update-kubeconfig --name uda-coworking-space-cluster
 
-#forwarding postgres to localhost 5433
-kubectl port-forward service/postgresql-service 5433:5432 &
+#forwarding postgres to localhost 5432
+kubectl port-forward service/postgresql-service 5432:5432 &
 export DB_PASSWORD=postgres
 # terminate forward port
 # ps aux | grep 'kubectl port-forward' | grep -v grep | awk '{print $2}' | xargs -r kill
